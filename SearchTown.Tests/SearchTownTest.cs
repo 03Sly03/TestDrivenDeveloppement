@@ -53,9 +53,12 @@ namespace SearchTown.Tests
         }
 
         [TestMethod]
-        public void TestSearch_SpecialChar_ShouldContain_List_Budapest()
+        public void TestSearch_SpecialChar_ShouldContain_List_AllTowns()
         {
-            List<string> expected = new List<string>() { "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul" };
+            List<string> expected = new List<string>()
+            {
+            "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+            };
             List<string> result = _searchTown.GetTowns("*");
             CollectionAssert.AreEqual(expected, result);
         }

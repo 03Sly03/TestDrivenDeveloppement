@@ -16,6 +16,8 @@ namespace SearchTown
 
         public List<string> GetTowns(string word)
         {
+            if (word == "*")
+                return TownsList;
             List<string> newTownsList = new List<string>();
             if (word.Length < 2)
                 throw new NotFoundException();
