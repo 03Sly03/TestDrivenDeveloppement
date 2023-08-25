@@ -21,7 +21,7 @@ namespace SearchTown
                 throw new NotFoundException();
             foreach (var town in TownsList)
             {
-                if (town.ToLower().StartsWith(word.ToLower()))
+                if (town.ToLower().Contains(word.ToLower()))
                     newTownsList.Add(town);
             }
             return newTownsList;
