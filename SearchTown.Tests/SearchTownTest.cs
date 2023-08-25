@@ -43,5 +43,13 @@ namespace SearchTown.Tests
             List<string> result = _searchTown.GetTowns("pa");
             CollectionAssert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void TestSearch_PartOfName_ShouldContain_List_Budapest()
+        {
+            List<string> expected = new List<string>() { "Budapest" };
+            List<string> result = _searchTown.GetTowns("ape");
+            CollectionAssert.AreEqual(expected, result);
+        }
     }
 }
