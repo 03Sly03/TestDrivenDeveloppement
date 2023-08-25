@@ -10,7 +10,6 @@ namespace SearchTown.Tests
     public class SearchTownTest
     {
         private Search _searchTown;
-
         [TestInitialize]
         public void SetUp()
         {
@@ -27,6 +26,14 @@ namespace SearchTown.Tests
         public void TestSearch_LessThan2Char_ShouldBe_NotFoundException()
         {
             Assert.ThrowsException<NotFoundException>(() => _searchTown.GetTowns("a"));
+        }
+
+        [TestMethod]
+        public void TestSearch_moreThanOrEqual2_SchouldBe_List()
+        {
+            List<string> expected = new List<string>() { "Paris" };
+            List<string> result = _searchTown.GetTowns("pa");
+            CollectionAssert.IsSubsetOf(expected, result);
         }
     }
 }
