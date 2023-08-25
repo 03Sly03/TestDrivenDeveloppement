@@ -29,11 +29,11 @@ namespace SearchTown.Tests
         }
 
         [TestMethod]
-        public void TestSearch_moreThanOrEqual2_SchouldBe_List()
+        public void TestSearch_moreThanOrEqual2_SchouldContain_List_Paris()
         {
             List<string> expected = new List<string>() { "Paris" };
             List<string> result = _searchTown.GetTowns("pa");
-            CollectionAssert.IsSubsetOf(expected, result);
+            CollectionAssert.AreEqual(expected, result);
         }
     }
 }
