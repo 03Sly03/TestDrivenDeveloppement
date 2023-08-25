@@ -8,6 +8,6 @@ namespace SearchTown.Tests
 {
     public class NotFoundException : Exception
     {
-        public NotFoundException(): base("Ne peut pas y avoir moins de 2 charactères") { }
+        public NotFoundException(): base() { }
     }
 }

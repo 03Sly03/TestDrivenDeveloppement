@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SearchTown.Tests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace SearchTown
 {
@@ -16,7 +16,9 @@ namespace SearchTown
 
         public List<string> GetTowns(string word)
         {
-            throw new NotImplementedException();
+            if (word.Length < 2)
+                throw new NotFoundException();
+            return TownsList;
         }
     }
 }

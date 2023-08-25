@@ -26,7 +26,7 @@ namespace SearchTown.Tests
         [TestMethod]
         public void TestSearch_LessThan2Char_ShouldBe_NotFoundException()
         {
-            Assert.ThrowsException<NotFoundException>(() => _searchTown.GetTowns("ab"));
+            Assert.ThrowsException<NotFoundException>(() => _searchTown.GetTowns("a"));
         }
     }
 }
