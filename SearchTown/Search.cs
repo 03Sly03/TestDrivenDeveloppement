@@ -9,7 +9,12 @@ namespace SearchTown
 {
     public class Search
     {
-        public bool GetTowns(string @string, List<string> townsList)
+        private List<string> TownsList { get; set; } = new List<string>()
+        {
+            "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+        };
+
+        public List<string> GetTowns(string word)
         {
             throw new NotImplementedException();
         }
