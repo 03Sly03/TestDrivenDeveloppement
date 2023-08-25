@@ -35,5 +35,13 @@ namespace SearchTown.Tests
             List<string> result = _searchTown.GetTowns("Pa");
             CollectionAssert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void TestSearch_NotCaseSensitive_SchouldContain_List_Paris()
+        {
+            List<string> expected = new List<string>() { "Paris" };
+            List<string> result = _searchTown.GetTowns("pa");
+            CollectionAssert.AreEqual(expected, result);
+        }
     }
 }
