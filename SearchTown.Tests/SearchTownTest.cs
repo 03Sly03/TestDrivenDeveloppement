@@ -32,7 +32,7 @@ namespace SearchTown.Tests
         public void TestSearch_moreThanOrEqual2_SchouldContain_List_Paris()
         {
             List<string> expected = new List<string>() { "Paris" };
-            List<string> result = _searchTown.GetTowns("pa");
+            List<string> result = _searchTown.GetTowns("Pa");
             CollectionAssert.AreEqual(expected, result);
         }
     }

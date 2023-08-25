@@ -16,9 +16,15 @@ namespace SearchTown
 
         public List<string> GetTowns(string word)
         {
+            List<string> newTownsList = new List<string>();
             if (word.Length < 2)
                 throw new NotFoundException();
-            return TownsList;
+            foreach (var town in TownsList)
+            {
+                if (town.StartsWith(word))
+                    newTownsList.Add(town);
+            }
+            return newTownsList;
         }
     }
 }
