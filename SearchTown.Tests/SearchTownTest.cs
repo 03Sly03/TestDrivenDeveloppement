@@ -9,16 +9,29 @@ namespace SearchTown.Tests
     [TestClass]
     public class SearchTownTest
     {
-        private List<string> townsList = new List<string>()
+        private Search _searchTown;
+
+        private List<string> TownsList { get; set; } = new List<string>()
         {
             "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
         };
 
+        [TestInitialize]
+        public void SetUp()
+        {
+            _searchTown = new Search();
+        }
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            _searchTown = null;
+        }
+
         [TestMethod]
         public void TestSearch_LessThan2Char_ShouldBe_NotFoundException()
         {
-            Search searchTown = new Search();
-            Assert.ThrowsException<NotFoundException>(() => searchTown.GetTowns("ab", townsList));
+            Assert.ThrowsException<NotFoundException>(() => _searchTown.GetTowns("ab", TownsList));
         }
     }
 }
